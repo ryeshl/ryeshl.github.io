@@ -85,10 +85,14 @@ a:hover {
   border-bottom: 2px solid transparent;
   padding-bottom: 0.2rem;
   transition: border-color 0.3s ease;
+  display: inline-block;
+  transition: transform 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 .nav-link:hover {
   text-decoration: none;
+  transform: translateY(-3px);
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .nav-link:not(.active-link):hover {
@@ -205,6 +209,7 @@ h1 {
   background: var(--panel);
   box-shadow: var(--shadow);
   overflow: hidden;
+  transition: all 0.4s ease-out;
 }
 
 .accordion-item summary {
@@ -239,10 +244,11 @@ h1 {
   gap: 1.5rem;
   max-height: 0;
   opacity: 0;
-  transition: max-height 0.4s ease, opacity 0.4s ease;
+  transition: max-height 0.4s ease-out, opacity 0.4s ease-out;
   overflow: hidden;
 }
 
+.accordion-item.active .accordion-panel,
 .accordion-item[open] .accordion-panel {
   max-height: 32rem;
   opacity: 1;
@@ -280,10 +286,13 @@ h1 {
   font-weight: 600;
   letter-spacing: 0.06rem;
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .fab:hover {
   text-decoration: none;
+  transform: translateY(-5px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
 }
 
 @media (max-width: 48rem) {

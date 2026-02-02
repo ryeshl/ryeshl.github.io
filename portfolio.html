@@ -240,6 +240,34 @@
 
     <a class="fab" href="1-pager.docx" download>Download CV</a>
 
+  
+    
+  
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+  const cards = document.querySelectorAll('.accordion-item');
+
+  if (cards.length > 0) {
+    cards.forEach((card) => card.removeAttribute('open'));
+    cards[0].classList.add('active');
+    cards[0].setAttribute('open', '');
+  }
+
+  cards.forEach((card) => {
+    const activateCard = () => {
+      cards.forEach((c) => {
+        c.classList.remove('active');
+        c.removeAttribute('open');
+      });
+      card.classList.add('active');
+      card.setAttribute('open', '');
+    };
+
+    card.addEventListener('mouseenter', activateCard);
+    card.addEventListener('click', activateCard);
+  });
+});
+</script>
   </body>
 
 </html>
